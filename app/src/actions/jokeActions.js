@@ -10,7 +10,7 @@ export const getJoke = () => {
 
         axios.get('https://v2.jokeapi.dev/joke/Any')
         .then(res =>{
-            dispatch({type:GET_JOKE_SUCCESS, payload:res.data.setup, payload:res.data.delivery })
+            dispatch({type:GET_JOKE_SUCCESS, payload:{setup: res.data.setup, delivery:res.data.delivery } })
             // dispatch({type:GET_JOKE_SUCCESS, payload: res.data.delivery})
         })
         .catch(err=>{
@@ -23,7 +23,7 @@ export const getJokeLoading = () => {
     return({ type: GET_JOKE_LOADING });
 } 
 export const getJokeSuccess = (setup, delivery) => {
-    return({ type: GET_JOKE_SUCCESS, payload:setup, payload:delivery });
+    return({ type: GET_JOKE_SUCCESS, payload:{setup: setup, delivery:delivery} });
 } 
 export const getJokeFail = (error) => {
     return({ type: GET_JOKE_FAIL, payload:error });

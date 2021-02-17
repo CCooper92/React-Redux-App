@@ -18,8 +18,8 @@ export const reducer = (state = initialState, action) => {
         case(GET_JOKE_SUCCESS):
         return({
             ...state,
-            setup: action.payload,
-            delivery: action.payload,
+            setup: action.payload.setup,
+            delivery: action.payload.delivery,
             isGetting: false
         });
         case(GET_JOKE_FAIL):
