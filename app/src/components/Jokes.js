@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
+
 import{ getJoke} from './../actions/jokeActions';
 
 const Jokes = (props) => {
     const { setup, delivery, isGetting, error } = props;
+
     const handleClick = () => {
         props.getJoke();
     }
@@ -19,8 +21,11 @@ const Jokes = (props) => {
     }
     return (
      <>
-        <h2>Joke Setup: {setup}</h2>
-        <h2>Joke Delivery: {delivery}</h2>
+        <h2> {setup}</h2>
+        <div className='Delivery'>
+
+        <h2> {delivery}</h2>
+        </div>
         <button onClick={handleClick}>Get new Joke!</button>
      </>
     );
