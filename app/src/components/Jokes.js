@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-
+import styled from 'styled-components';
 
 import{ getJoke} from './../actions/jokeActions';
 
@@ -21,12 +21,12 @@ const Jokes = (props) => {
     }
     return (
      <>
-        <h2> {setup}</h2>
+        <SetupStyle> {setup}</SetupStyle>
         <div className='Delivery'>
 
-        <h2> {delivery}</h2>
+        <SetupStyle> {delivery}</SetupStyle>
         </div>
-        <button onClick={handleClick}>Get new Joke!</button>
+        <ButtonStyle onClick={handleClick}>Get new Joke!</ButtonStyle>
      </>
     );
 }
@@ -39,5 +39,19 @@ const mapStateToProps = state => {
         error: state.error
     };
 };
+
+const ButtonStyle = styled.button`
+background-color:#81A094;
+padding: 1.5%;
+color: #203B3D;
+font-size: 1rem;
+font-weight: bold;
+border: 2px solid #203B3D;
+border-radius: 10px;
+`
+const SetupStyle = styled.h3`
+color: #203B3D;
+`
+
 
 export default connect(mapStateToProps, {getJoke})(Jokes);

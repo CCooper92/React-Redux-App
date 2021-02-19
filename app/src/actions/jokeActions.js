@@ -19,12 +19,3 @@ export const getJoke = () => {
     }
 }
 
-// export const getJokeLoading = () => {
-//     return({ type: GET_JOKE_LOADING });
-// } 
-// export const getJokeSuccess = (setup, delivery) => {
-//     return({ type: GET_JOKE_SUCCESS, payload:{setup: setup, delivery:delivery} });
-// } 
-// export const getJokeFail = (error) => {
-//     return({ type: GET_JOKE_FAIL, payload:error });
-// } 
